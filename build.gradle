@@ -1,0 +1,30 @@
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+version = '0.0.1'
+
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+  dependencies {
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.10'
+}
+
+subprojects {
+  apply plugin: 'eclipse'
+  apply plugin: 'maven'
+  apply plugin: 'idea'
+
+  sourceCompatibility = JavaVersion.VERSION_1_6
+
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+}
