@@ -18,26 +18,30 @@ import org.apache.log4j.Logger;
 @SuppressWarnings("unchecked")
 public class Grok {
 
-  //static Logger logger = Logger.getLogger(Grok.class);
+  static Logger LOG = Logger.getLogger(Grok.class);
 
   /**
    * Grok application entry point :)
    *
-   * @param args
+   * @param Arguments to pass to grok
    */
-  public static void main(String[] args) {
-    CliBuilder<Runnable> builder = Cli.<Runnable>builder("grok").withDescription("Grok apllication").withDefaultCommand(Help.class).withCommands(Help.class, File.class);
+  public static void main(String... args) {
+    LOG.debug("Starting grok application");
+    CliBuilder<Runnable> builder = Cli.<Runnable>builder("grok")
+                                   .withDescription("Grok apllication")
+                                   .withDefaultCommand(Help.class)
+                                   .withCommands(Help.class, File.class);
     Cli<Runnable> deguParser = builder.build();
     try {
       deguParser.parse(args).run();
     } catch (ParseArgumentsUnexpectedException e) {
-      //logger.error(e.getMessage());
+      LOG.error(e.getMessage());
       System.out.println("Unknown command");
     } catch (ParseOptionMissingValueException e1) {
-      //logger.error(e1.getMessage());
+      LOG.error(e1.getMessage());
       System.out.println("Missing value: " + e1.getMessage());
     }
-    //logger.info("closing BlackBox");
+    LOG.debug("quit grok application");
   }
 
 }

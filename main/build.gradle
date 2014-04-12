@@ -3,6 +3,12 @@ apply plugin: 'application'
 
 mainClassName = "io.thekraken.grok.main.Grok"
 
+run {
+  if ( project.hasProperty('args') ) {
+    args project.args.split('\\s+')
+  }
+}
+
 dependencies {
   compile project(":parser")
 

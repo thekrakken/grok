@@ -30,6 +30,7 @@ build/
 
 ./target/
 ./src/main/java/com/nflabs/Grok/App.java
+.README.md.html
 
 *~
 \#*\#
