@@ -1,14 +1,15 @@
 package io.thekraken.grok.main;
 
+//import org.apache.log4j.Logger;
+
 import io.airlift.command.Cli;
 import io.airlift.command.Cli.CliBuilder;
 import io.airlift.command.Help;
 import io.airlift.command.ParseArgumentsUnexpectedException;
 import io.airlift.command.ParseOptionMissingValueException;
-import io.thekraken.grok.configuration.Configuration;
+import io.thekraken.grok.configuration.SingletonGrok;
 import io.thekraken.grok.parser.File;
 
-import org.apache.log4j.Logger;
 
 /**
  * Grok application
@@ -19,7 +20,7 @@ import org.apache.log4j.Logger;
 @SuppressWarnings("unchecked")
 public class Grok {
 
-  static Logger LOG = Logger.getLogger(Grok.class);
+  //static Logger LOG = Logger.getLogger(Grok.class);
 
   /**
    * Grok application entry point :)
@@ -27,7 +28,7 @@ public class Grok {
    * @param Arguments to pass to grok
    */
   public static void main(String... args) {
-    LOG.debug("Starting grok application");
+    //LOG.debug("Starting grok application");
     CliBuilder<Runnable> builder = Cli.<Runnable>builder("grok")
                                    .withDescription("Grok apllication")
                                    .withDefaultCommand(Help.class)
@@ -36,38 +37,19 @@ public class Grok {
     try {
       deguParser.parse(args).run();
     } catch (ParseArgumentsUnexpectedException e) {
-      LOG.error(e.getMessage());
+      //LOG.error(e.getMessage());
       System.out.println("Unknown command");
     } catch (ParseOptionMissingValueException e1) {
-      LOG.error(e1.getMessage());
+      //LOG.error(e1.getMessage());
       System.out.println("Missing value: " + e1.getMessage());
     }
     
     /** Start the grok app */
-    Grok g = Grok.getInstance();
+    SingletonGrok g = SingletonGrok.getInstance();
     
-    LOG.debug("quit grok application");
+    //LOG.debug("quit grok application");
   }
   
-  /**
-   * Private constructor
-   */
-  private Grok(){
-  }
   
-  /**
-   * Singleton
-   *
-   * @return instance of Match
-   */
-  public static Grok getInstance() {
-    return GrokHolder.INSTANCE;
-  }
-
-  private static class GrokHolder {
-    private static final Grok INSTANCE = new Grok();
-  }
-  
-  public Configuration config;
 
 }

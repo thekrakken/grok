@@ -1,0 +1,4 @@
+--- # Example of Grok config
+input:
+  type: "file"
+  location: "/var/log/message"
