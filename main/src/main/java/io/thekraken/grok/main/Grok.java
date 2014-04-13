@@ -5,6 +5,7 @@ import io.airlift.command.Cli.CliBuilder;
 import io.airlift.command.Help;
 import io.airlift.command.ParseArgumentsUnexpectedException;
 import io.airlift.command.ParseOptionMissingValueException;
+import io.thekraken.grok.configuration.Configuration;
 import io.thekraken.grok.parser.File;
 
 import org.apache.log4j.Logger;
@@ -41,7 +42,32 @@ public class Grok {
       LOG.error(e1.getMessage());
       System.out.println("Missing value: " + e1.getMessage());
     }
+    
+    /** Start the grok app */
+    Grok g = Grok.getInstance();
+    
     LOG.debug("quit grok application");
   }
+  
+  /**
+   * Private constructor
+   */
+  private Grok(){
+  }
+  
+  /**
+   * Singleton
+   *
+   * @return instance of Match
+   */
+  public static Grok getInstance() {
+    return GrokHolder.INSTANCE;
+  }
+
+  private static class GrokHolder {
+    private static final Grok INSTANCE = new Grok();
+  }
+  
+  public Configuration config;
 
 }

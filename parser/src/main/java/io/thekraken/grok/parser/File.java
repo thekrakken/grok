@@ -3,6 +3,8 @@ package io.thekraken.grok.parser;
 import io.airlift.command.Arguments;
 import io.airlift.command.Command;
 import io.airlift.command.Option;
+import io.thekraken.grok.configuration.Configuration;
+import io.thekraken.grok.main.Grok;
 
 @Command(name = "file", description = "Grok configuration file")
 public class File extends GrokCommand {
@@ -14,8 +16,9 @@ public class File extends GrokCommand {
 
   @Override
   public void run() {
-    /** dont need to check the filePath */
-    /** Pass the file to YAML parser*/
+    /** dont need to check the filePath here */
+    Grok g = Grok.getInstance();
+    g.config = new Configuration(filePath);
   }
 
 }
