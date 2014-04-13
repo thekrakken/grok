@@ -1,6 +1,6 @@
 package io.thekraken.grok.configuration;
 
-import io.thekraken.grok.configuration.model.Input;
+import io.thekraken.grok.configuration.model.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,6 +28,14 @@ public class Configuration {
   public Input getInput(){
     return conf.input;
   }
+  
+  public Filter getFilter(){
+    return conf.filter;
+  }
+  
+  public Output getOutput(){
+    return conf.output;
+  }
 
   /**
    * YAML reader
@@ -38,6 +46,8 @@ public class Configuration {
     public static YamlConfig EMPTY = new YamlConfig();
     
     public Input input;
+    public Filter filter;
+    public Output output;
 
     public YamlConfig() {}
     

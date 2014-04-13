@@ -9,6 +9,11 @@ public class SingletonGrok {
   }
   
   /**
+   * Configuration of grok app
+   */
+  public Configuration config;
+  
+  /**
    * Singleton
    *
    * @return instance of Match
@@ -20,7 +25,5 @@ public class SingletonGrok {
   private static class GrokHolder {
     private static final SingletonGrok INSTANCE = new SingletonGrok();
   }
-  
-  public Configuration config;
   
 }

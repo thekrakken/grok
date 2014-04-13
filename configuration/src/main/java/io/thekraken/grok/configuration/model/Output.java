@@ -1,21 +1,14 @@
 package io.thekraken.grok.configuration.model;
 
-public class Input {
-  public String type;
+public class Output {
+
   public String location;
+  public String type;
 
-  public Input() {}
+  public Output() {}
 
-  public Input(String type, String location) {
-    this.type = type;
+  public Output(String type, String location) {
     this.location = location;
-  }
-
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
     this.type = type;
   }
 
@@ -27,4 +20,13 @@ public class Input {
     this.location = location;
   }
 
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  
 }
