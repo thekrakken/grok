@@ -15,7 +15,7 @@ import io.thekraken.grok.parser.File;
  * Grok application
  *
  * @author anthonycorbacho
- *
+ * @since 0.0.1
  */
 @SuppressWarnings("unchecked")
 public class Grok {

@@ -6,7 +6,13 @@ import io.airlift.command.Option;
 import io.thekraken.grok.configuration.Configuration;
 import io.thekraken.grok.configuration.SingletonGrok;
 
-@Command(name = "file", description = "Grok configuration file")
+/**
+ * Manage --file option
+ * 
+ * @author anthonycorbacho
+ * @since 0.0.1
+ */
+@Command(name = "--file", description = "Grok configuration file")
 public class File extends GrokCommand {
 
   @Arguments(title = "FILEPATH",

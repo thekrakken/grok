@@ -1,5 +1,12 @@
 package io.thekraken.grok.configuration;
 
+/**
+ * Singleton of grok application
+ * Manage the behavior of Grok
+ * 
+ * @author anthonycorbacho
+ * @since 0.0.1
+ */
 public class SingletonGrok {
 
   /**
@@ -14,6 +21,11 @@ public class SingletonGrok {
   public Configuration config;
   
   /**
+   * 
+   */
+  public Boolean deamon;
+  
+  /**
    * Singleton
    *
    * @return instance of Match
@@ -26,4 +38,8 @@ public class SingletonGrok {
     private static final SingletonGrok INSTANCE = new SingletonGrok();
   }
   
+  @Override
+  public String toString(){
+    return "Grok";
+  }
 }

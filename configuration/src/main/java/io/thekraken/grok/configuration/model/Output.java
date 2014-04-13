@@ -1,5 +1,11 @@
 package io.thekraken.grok.configuration.model;
 
+/**
+ * Representation of the propertie output in grok configuration file
+ * 
+ * @author anthonycorbacho
+ * @since 0.0.1
+ */
 public class Output {
 
   public String location;
