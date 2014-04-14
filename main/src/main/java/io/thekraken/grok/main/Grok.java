@@ -8,7 +8,7 @@ import io.airlift.command.Help;
 import io.airlift.command.ParseArgumentsUnexpectedException;
 import io.airlift.command.ParseOptionMissingValueException;
 import io.thekraken.grok.configuration.SingletonGrok;
-import io.thekraken.grok.parser.File;
+import io.thekraken.grok.parser.*;
 
 
 /**
@@ -32,7 +32,7 @@ public class Grok {
     CliBuilder<Runnable> builder = Cli.<Runnable>builder("grok")
                                    .withDescription("Grok apllication")
                                    .withDefaultCommand(Help.class)
-                                   .withCommands(Help.class, File.class);
+                                   .withCommands(Help.class, GrokFile.class, GrokDeamon.class);
     Cli<Runnable> deguParser = builder.build();
     try {
       deguParser.parse(args).run();
@@ -43,13 +43,13 @@ public class Grok {
       //LOG.error(e1.getMessage());
       System.out.println("Missing value: " + e1.getMessage());
     }
-    
+
     /** Start the grok app */
     SingletonGrok g = SingletonGrok.getInstance();
-    
+
     //LOG.debug("quit grok application");
   }
-  
-  
+
+
 
 }
