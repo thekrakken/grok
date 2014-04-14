@@ -6,14 +6,14 @@ import io.thekraken.grok.configuration.SingletonGrok;
 
 /**
  * Manage the option --as-deamon
- * 
+ *
  * @author anthonycorbacho
  * @since 0.0.1
  */
-@Command(name = "--as-deamon", description = "Grok configuration file")
+@Command(name = "--as-deamon", description = "Start grok as deamon")
 public class GrokDeamon extends GrokCommand {
-  
-  @Arguments(title = "",
+
+  @Arguments(title = "Deamon",
       description = "true / false")
   Boolean deamon = false;
 
