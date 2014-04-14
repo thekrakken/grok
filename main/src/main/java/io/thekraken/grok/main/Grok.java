@@ -2,6 +2,8 @@ package io.thekraken.grok.main;
 
 //import org.apache.log4j.Logger;
 
+import com.nflabs.grok.GrokException;
+
 import io.airlift.command.Cli;
 import io.airlift.command.Cli.CliBuilder;
 import io.airlift.command.Help;
@@ -46,6 +48,11 @@ public class Grok {
 
     /** Start the grok app */
     SingletonGrok g = SingletonGrok.getInstance();
+    try {
+      g.run();
+    } catch (GrokException e) {
+      e.printStackTrace();
+    }
 
     //LOG.debug("quit grok application");
   }

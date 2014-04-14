@@ -5,6 +5,9 @@ dependencies {
   compile "com.google.guava:guava:15.0"
   compile "org.yaml:snakeyaml:1.13"
 
+  // Grok version
+  compile "com.nflabs:grok:0.0.5"
+
   testCompile "junit:junit:4.11"
   testCompile "org.mockito:mockito-core:1.9.5"
 }

@@ -4,7 +4,12 @@ public class Input {
   public String type;
   public String location;
 
-  public Input() {}
+  public static Input EMPTY = new Input();
+
+  public Input() {
+    type = "";
+    location = "";
+  }
 
   public Input(String type, String location) {
     this.type = type;

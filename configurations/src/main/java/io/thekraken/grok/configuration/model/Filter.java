@@ -5,7 +5,12 @@ public class Filter {
   public String file;
   public String pattern;
 
-  public Filter() {}
+  public static Filter EMPTY = new Filter();
+
+  public Filter() {
+    file = "";
+    pattern = "";
+  }
 
   public Filter(String file, String pattern) {
     this.file = file;
@@ -27,5 +32,5 @@ public class Filter {
   public void setPattern(String pattern) {
     this.pattern = pattern;
   }
-  
+
 }
