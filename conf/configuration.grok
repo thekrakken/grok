@@ -1,7 +1,7 @@
 --- # Example of Grok config
 input:
-  type: "file"
-  location: "/var/log/message"
+  type: "FILE"
+  location: "/Users/anthonyc/dev/_NFLABS/java-grok/src/test/resources/nasa/xaa"
 
 filter:
   file: ""  
