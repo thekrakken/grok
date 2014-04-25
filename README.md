@@ -1,6 +1,4 @@
-# Grok
-
-[![Build Status](https://secure.travis-ci.org/thekrakken/grok.png?branch=master)](https://travis-ci.org/thekrakken/grok)
+# Grok [![Build Status](https://secure.travis-ci.org/thekrakken/grok.png?branch=master)](https://travis-ci.org/thekrakken/grok)
 
 Grok is simple tool that allows you to easily parse logs and other files (single line). With Grok, you can turn unstructured log and event data \
 into structured data (JSON).
