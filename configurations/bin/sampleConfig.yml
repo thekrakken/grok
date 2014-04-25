@@ -1,0 +1,12 @@
+--- # Example of Grok config
+input:
+  type: "FILE"
+  location: "/var/log/httpd.log"
+
+filter:
+  file: "%{APACHELOG}"
+  pattern: "/grok/pattern/my_patterns"
+
+output:
+  type: "FILE"
+  location: "./gork/out.txt"

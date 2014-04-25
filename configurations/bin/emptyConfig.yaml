@@ -1,0 +1,12 @@
+--- # Example of Grok config
+input:
+  type: ""
+  location: ""
+
+filter:
+  file: ""
+  pattern: ""
+
+output:
+  type: ""
+  location: ""

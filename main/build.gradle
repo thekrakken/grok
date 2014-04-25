@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "io.thekraken.grok.main.Grok"
+
+run {
+  if ( project.hasProperty('args') ) {
+    args project.args.split('\\s+')
+  }
+}
+
+dependencies {
+  compile project(":parser")
+
+  testCompile "junit:junit:4.11"
+  testCompile "org.mockito:mockito-core:1.9.5"
+}

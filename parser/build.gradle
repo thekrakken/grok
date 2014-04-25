@@ -1,0 +1,6 @@
+apply plugin: 'java'
+
+dependencies {
+  compile project(":configurations")
+  compile "io.airlift:airline:0.6"
+}
