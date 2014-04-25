@@ -32,6 +32,7 @@ configurations/bin/
 ./src/main/java/com/nflabs/Grok/App.java
 .README.md.html
 output.json
+gradlew.bat
 
 *~
 \#*\#
