@@ -1,12 +1,12 @@
 --- # Example of Grok config
 input:
   type: "FILE"
-  location: "/Users/anthonyc/dev/_NFLABS/java-grok/src/test/resources/nasa/xaa"
+  location: "/path/tolog"
 
 filter:
-  file: ""  
-  pattern: ""
+  file: "/path/to/grokpattern"
+  pattern: "%{COMMONAPACHELOG}"
 
 output:
-  type: ""
-  location: ""
+  type: "FILE"
+  location: "/path/to/output.json"

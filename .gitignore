@@ -27,10 +27,11 @@ Thumbs.db
 # Gradle
 .gradle
 build/
-
+configurations/bin/
 ./target/
 ./src/main/java/com/nflabs/Grok/App.java
 .README.md.html
+output.json
 
 *~
 \#*\#

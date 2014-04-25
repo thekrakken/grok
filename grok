@@ -29,5 +29,5 @@ ELEMENTS=${#args[@]}
 for (( i=0;i<$ELEMENTS;i++)); do 
     var+="${args[${i}]} " 
 done
-gradle run -Pargs="$var"
+./gradlew run -Pargs="$var"
 

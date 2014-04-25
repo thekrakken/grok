@@ -6,7 +6,7 @@ dependencies {
   compile "org.yaml:snakeyaml:1.13"
 
   // Grok version
-  compile "com.nflabs:grok:0.0.5"
+  compile "com.nflabs:grok:0.0.6"
 
   testCompile "junit:junit:4.11"
   testCompile "org.mockito:mockito-core:1.9.5"
